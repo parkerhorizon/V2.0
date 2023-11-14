@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ดาว์นโหลดแบบฟอร์ม</title>
+    <!-- Shortcut Icon -->
+    <link rel="shortcut icon" href="/assets/img/กองข่าวอากาศ.png" type="image/png">
+    <!-- Css -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Font Import -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Css -->
+</head>
+<style>
+    /* สไตล์ทั่วไป */
+    @import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+    @import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'K2D', sans-serif;
+        box-sizing: border-box;
+        text-transform: uppercase;
+    }
+
+
+
+
+    .fa {
+        font-family: 'K2D', sans-serif;
+    }
+
+    nav a {
+        color: #fff;
+        font-size: 22px;
+    }
+
+    nav a:hover {
+        color: yellow;
+    }
+
+    .marquee {
+        font-size: 40px;
+    }
+
+    .btn {
+        background-color: #2E4374;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-family: 'K2D', sans-serif;
+        display: inline-block;
+        font-size: 18px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+
+    footer {
+        background-color: #002941;
+        color: #fff;
+        width: 100%;
+    }
+
+
+    body {
+        font-family: "Montserrat", sans-serif;
+        text-transform: lowercase;
+        font-weight: 400;
+        line-height: 1.666;
+        background: #7C81AD;
+        color: #000000;
+    }
+
+    h1 {
+        font-weight: 900;
+        font-size: 500%;
+        text-align: center;
+        margin-top: 4rem;
+        color: white;
+        line-height: 1.2;
+
+        span {
+            padding: 5px 15px;
+            background: #a083bc;
+        }
+    }
+
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 90%;
+        max-width: 100%;
+        text-align: left;
+
+        .center {
+            text-align: end;
+        }
+    }
+
+    th,
+    td {
+        padding: 0.5rem;
+        vertical-align: top;
+    }
+
+    th {
+        text-align: initial;
+    }
+
+    thead,
+    th {
+        font-weight: 600;
+        vertical-align: bottom;
+        color: #a083bc;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.35);
+    }
+
+    td {
+        border-top: 1px solid rgba(160, 130, 188, 0.4);
+    }
+
+    .dictionary {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 4rem auto;
+        max-width: 90%;
+    }
+
+    .a1 {
+        color: inherit;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: solid 2px lighten(#0c004f, 10%);
+
+        &:hover {
+            border-color: #a083bc;
+        }
+    }
+
+    .dictionary>.term {
+        text-align: center;
+        max-width: 30rem;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border-radius: 3px;
+        box-shadow:
+            0 2px 0 rgba(0, 0, 0, 0.05),
+            0 5px 20px rgba(0, 0, 0, 0.1);
+        background-color: #bad1ff;
+        transition: all 100ms ease-in-out;
+
+        &:hover {
+            transform: scale(1.01) translateY(-4px);
+            box-shadow:
+                0 2px 0 rgba(0, 0, 0, 0.05),
+                0 3px 10px rgba(0, 0, 0, 0.1),
+                0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+
+    .dictionary>.term>.dt {
+        margin-bottom: 1rem;
+    }
+
+    .dt {
+        color: #a083bc;
+        line-height: 1;
+
+        span {
+            font-size: 200%;
+            font-weight: 900;
+        }
+    }
+
+    .dd {
+        font-size: 92.5%;
+        margin-left: 0;
+    }
+
+    .dd dt {
+        margin-top: 1rem;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+        font-size: inherit;
+    }
+
+    .dd dl {
+        font-size: 90%;
+        margin: 1rem auto 0 auto;
+        letter-spacing: 0.33px;
+        max-width: 15rem;
+    }
+
+    .strong {
+        color: #a083bc;
+    }
+
+    .dd dl .term {
+        margin-bottom: 1rem;
+    }
+
+    .dd strong {
+        border-bottom: solid 1px rgba(255, 255, 255, 0.5);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+    button.buttonn {
+        animation: 1.5s ease infinite alternate running shimmer;
+        background: linear-gradient(90deg, #A8D8EA 0%, #AA96DA 30%, #FCBAD3 85%);
+        background-size: 200% 100%;
+        border: none;
+        border-radius: 6px;
+        box-shadow: -2px -2px 10px rgb(168, 216, 234), 2px 2px 10px rgb(252, 186, 211);
+        color: #170F1E;
+        cursor: pointer;
+        font-family: 'K2D', sans-serif;
+        font-size: 16px;
+        font-weight: 670;
+        line-height: 24px;
+        overflow: hidden;
+        padding: 12px 24px;
+        position: relative;
+        text-decoration: none;
+        transition: 0.2s;
+        height: 40px;
+        
+    }
+
+    button.buttonn svg {
+        left: -20px;
+        opacity: 0.5;
+        position: absolute;
+        top: -2px;
+        transition: 0.5s cubic-bezier(.5, -0.5, .5, 1.5);
+    }
+
+    button.buttonn:hover svg {
+        opacity: 0.8;
+        transform: translateX(50px) scale(1.5);
+    }
+
+    button.buttonn:hover {
+        transform: rotate(-3deg);
+    }
+
+    button.buttonn:active {
+        transform: scale(0.95) rotate(-3deg);
+    }
+
+    @keyframes shimmer {
+        to {
+            background-size: 100% 100%;
+            box-shadow: -2px -2px 6px rgba(255, 227, 126, 0.5), 2px 2px 6px rgba(144, 148, 255, 0.5);
+        }
+    }
+</style>
+
+<body style="background-color: #134E73;">
+
+    <!-- Header -->
+    <img class="img-fluid" alt="Header" src="/assets/img/cover ปรับแล้วใหม่.png">
+
+    <!-- Header -->
+
+    <!-- Navbar -->
+    <div class=" sticky-top ">
+        <nav style="background-color: #002941; font-family:'K2D', sans-serif; padding: 10px; ">
+            <a class="me-3 py-2 text-decoration-none" href="/Web ผบอ/index.html"><i
+                    class="fa-solid fa-arrow-rotate-right fa-spin fa-spin-reverse"></i>&nbsp;กลับหน้าหลัก</a>
+
+        </nav>
+    </div>
+
+    <h1>
+        <span>แบบฟอร์มต่างๆ</span>
+    </h1>
+
+    <dl class="dictionary">
+        <div class="term rounded-3">
+            <dt>
+                <span>
+                    <h4>แจ้งเตือนสภาพอากาศ</h4>
+                </span>
+            </dt>
+            <dd>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อฟอร์ม</th>
+                            <th></th>
+                            <th></th>
+                            <end>
+                                <th>ดาวน์โหลด</th>
+                            </end>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>กขอ.๘ ก&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/img/4_65.pdf">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>กขอ.๘ ข&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="http://tsdcomm.rtaf.mi.th/wp-content/uploads/mcs_docs_2553.pdf">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>แบบฟอร์มแจ้งเตือนสนามบินดอนเมือง <br>และใกล้เคียง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม warning/การแจ้งเตือนสภาพอากาศ ใหม่.doc">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </dd>
+        </div>
+
+        <div class="term rounded-3">
+            <dt>
+                <span>
+                    <h3>แบบฟอร์ม TAF</h3>
+                </span>
+            </dt>
+            <dd>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อฟอร์ม</th>
+                            <th></th>
+                            <th></th>
+                            <end>
+                                <th>ดาวน์โหลด</th>
+                            </end>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>taf&nbsp;0500z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม TAF/TAF 0500.xls">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>TAF&nbsp;1100z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม TAF/TAF 1100.xls">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>TAF&nbsp;1700z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม TAF/TAF 1700.xls">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            
+                            <td>TAF&nbsp;2300z&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม TAF/TAF 2300.xls">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </dd>
+        </div>
+
+        <div class="term">
+            <dt>
+                <span>
+                    <h3>อื่นๆ</h3>
+                </span>
+            </dt>
+            <dd>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ชื่อฟอร์ม</th>
+                            <th></th>
+                            <th></th>
+                            <end>
+                                <th>ดาวน์โหลด</th>
+                            </end>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            
+                            <td>แบบฟอร์มการเกิด/สลายตัว L,H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม อื่น/แบบฟอร์มการเกิด H,L.xls">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>แบบฟอร์ม FLOAT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <a href="/Web ผบอ/แบบฟอร์ม อื่นๆ/แบบฟอร์ม FOTH.xlsx">
+                                    <button class="buttonn" onClick={console.log("click")}>
+                                        <i class="fa-solid fa-download fa-bounce"></i>
+                                        <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g filter="url(#filter0_f_618_1123)">
+                                                <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                    fill="url(#paint0_linear_618_1123)" />
+                                            </g>
+                                            <defs>
+                                                <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                    filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                        result="shape" />
+                                                    <feGaussianBlur stdDeviation="1"
+                                                        result="effect1_foregroundBlur_618_1123" />
+                                                </filter>
+                                                <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                    x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" stop-opacity="0.6" />
+                                                    <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </button></a>
+                            </td>
+                        </tr>
+                        
+                    
+                    <tr>
+                        <td>ตารางบันทึกความกดอากาศ อุณหภูมิและอุณหภูมิจุดน้ำค้าง&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        <td></td>
+                        <td></td>
+                        <td>
+                            <a href="/Web ผบอ/แบบฟอร์ม อื่นๆ/ตารางบันทึกความกดอากาศ.xls">
+                                <button class="buttonn" onClick={console.log("click")}>
+                                    <i class="fa-solid fa-download fa-bounce"></i>
+                                    <svg width="79" height="46" viewBox="0 0 79 46" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_f_618_1123)">
+                                            <path d="M42.9 2H76.5L34.5 44H2L42.9 2Z"
+                                                fill="url(#paint0_linear_618_1123)" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_f_618_1123" x="0" y="0" width="78.5" height="46"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix"
+                                                    result="shape" />
+                                                <feGaussianBlur stdDeviation="1"
+                                                    result="effect1_foregroundBlur_618_1123" />
+                                            </filter>
+                                            <linearGradient id="paint0_linear_618_1123" x1="76.5" y1="2.00002"
+                                                x2="34.5" y2="44" gradientUnits="userSpaceOnUse">
+                                                <stop stop-color="white" stop-opacity="0.6" />
+                                                <stop offset="1" stop-color="white" stop-opacity="0.05" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                </button></a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </dd>
+        </div>
+
+
+
+
+    </dl>
+
+
+
+
+
+
+    <!-- กดขึ้นด้านบน -->
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- กดขึ้นด้านบน -->
+    <!-- Js -->
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <!-- Js -->
+
+    <footer class="text-center">
+        <small>
+            Copyright © แผนกเครื่องมือตรวจอากาศ กองข่าวอากาศ กองบัญชาการควบคุมการปฏิบัติทางอากาศ<br>
+            Build 2023-10-05 ผู้รับผิดชอบ พ.อ.อ.ภูวเนศ สุวรรณพรม, จ.อ.นราสร วงศ์ทรัพย์อิน, จ.ต.ธนาภัทร บุญเมือง
+        </small>
+
+    </footer>
+    <!-- Footer -->
+
+
+</body>
+
+</html>
